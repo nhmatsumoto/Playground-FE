@@ -1,28 +1,48 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Keycloak + TailwindCSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto frontend criado com **React** e **TypeScript**, utilizando **Vite** para build e desenvolvimento rápido.  
+A aplicação já está configurada com **autenticação via Keycloak**, incluindo funcionalidades de **login e logout**, além de possuir o **TailwindCSS instalado e pronto para uso**.
 
-Currently, two official plugins are available:
+Este projeto serve como base para aplicações seguras com gerenciamento de autenticação e controle de acesso, com foco em produtividade e escalabilidade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Stack utilizada
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Keycloak](https://www.keycloak.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-```js
+---
+
+## Sobre o template base
+
+Este template fornece uma configuração mínima para rodar React com Vite, suporte a HMR (Hot Module Replacement) e regras básicas de ESLint.
+
+Atualmente, dois plugins oficiais estão disponíveis:
+
+- `@vitejs/plugin-react` usa Babel para Fast Refresh  
+- `@vitejs/plugin-react-swc` usa SWC para Fast Refresh
+
+---
+
+## Expandindo a configuração do ESLint
+
+Se você estiver desenvolvendo uma aplicação para produção, recomenda-se atualizar a configuração para ativar regras de lint com verificação de tipo:
+
+```ts
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
+    // Remova ...tseslint.configs.recommended e substitua por:
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
+    // Opcionalmente, use para regras mais rígidas
     ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
+    // Adicionalmente, regras estilísticas
     ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -31,22 +51,18 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Você também pode instalar eslint-plugin-react-x e eslint-plugin-react-dom para regras específicas do React:
 
-```js
-// eslint.config.js
+```ts
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
 export default tseslint.config({
   plugins: {
-    // Add the react-x and react-dom plugins
     'react-x': reactX,
     'react-dom': reactDom,
   },
   rules: {
-    // other rules...
-    // Enable its recommended typescript rules
     ...reactX.configs['recommended-typescript'].rules,
     ...reactDom.configs.recommended.rules,
   },
