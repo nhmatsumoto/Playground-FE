@@ -5,7 +5,9 @@ export const LoginButton = () => {
     const { signinRedirect } = useAuth();
 
     const handleLogin = () => {
-        signinRedirect();
+        signinRedirect().catch(error => {
+            console.error("Login failed:", error);
+        });
     }
 
     return (

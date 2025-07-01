@@ -10,8 +10,6 @@ const ProtectedRoute = ({ children } : ProtectedRouteProps) => {
 
     const { isAuthenticated, isLoading } = useAuth();
 
-    console.log(JSON.stringify(isAuthenticated))
-
     if (isLoading) {
         return <>Carregando...</>; 
     }
