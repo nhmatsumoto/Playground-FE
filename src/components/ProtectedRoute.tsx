@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from 'react-oidc-context';
-import { LoginButton } from './LoginButton';
+import Login from './Login';
 import { MainLayout } from './layout/MainLayout';
 import Loader from './Loader';
 
@@ -31,8 +31,8 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
             textAlign: 'center',
             }}
         >
-        <h2>É necessário fazer login para acessar esta página.</h2>
-        <LoginButton />
+            <h2>É necessário fazer login para acessar esta página.</h2>
+            <Login />
         </div>
     </MainLayout>
   );

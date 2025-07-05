@@ -4,7 +4,7 @@ interface LoaderProps {
   message?: string;
 }
 
-const Loader = ({ message = 'Carregando...' } : LoaderProps) => {
+const Loader = ({ message = 'Loading...' } : LoaderProps) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-[150px] p-4 text-center">
       <LoaderCircle size={48} className="animate-spin text-gray-600" />
