@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <footer className="bg-gray-800 text-white p-4 text-center">
-            © 2023 My Application
+            © 2023 NHMatsumoto
         </footer>
     )
 }
